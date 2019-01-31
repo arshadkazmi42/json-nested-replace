@@ -1,5 +1,6 @@
 # json-nested-replace
 
+[![NPM Version](https://img.shields.io/npm/v/json-nested-replace.svg)](https://www.npmjs.com/package/json-nested-replace)
 [![Build Status](https://travis-ci.com/arshadkazmi42/json-nested-replace.svg?branch=master)](https://travis-ci.com/arshadkazmi42/json-nested-replace)
 [![Github Repo Size](https://img.shields.io/github/repo-size/arshadkazmi42/json-nested-replace.svg)](https://github.com/arshadkazmi42/json-nested-replace)
 [![Contributors](https://img.shields.io/github/contributors/arshadkazmi42/json-nested-replace.svg)](https://github.com/arshadkazmi42/json-nested-replace/graphs/contributors)
