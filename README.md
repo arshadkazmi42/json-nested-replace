@@ -19,6 +19,8 @@ Please consider donating, if you like my work
 ```
 $ npm install json-nested-replace
 ```
+## NPM Version Badge
+[![NPM Version](https://img.shields.io/npm/v/json-nested-replace.svg)](https://www.npmjs.com/package/json-nested-replace)
 
 ## Usage
 
