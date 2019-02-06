@@ -4,6 +4,8 @@
   "description": "Searches and replace values at every level of nested json ",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "pretest": "eslint --ignore-path .gitignore .",
     "test": "node_modules/mocha/bin/mocha tests/"
   },
   "repository": {
@@ -25,6 +27,8 @@
   "homepage": "https://github.com/arshadkazmi42/json-nested-replace#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "eslint": "^5.11.1",
+    "eslint-config-strongloop": "^2.1.0"
   }
 }

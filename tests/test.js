@@ -67,22 +67,38 @@ const REPLACE_ARRYA_JSON = {
 
 describe('replace in nested json', () => {
   it('should replace all the occurences in object', () => {
-    const replacedValue = jnestedReplace(INPUT_JSON, 'json-nested-replace', 'jnested-replace')
-    expect(replacedValue).to.deep.equal(REPLACED_JSON)
-  });
-  it('should replace all the occurences in string', () => {
-    const replacedValue = jnestedReplace(INPUT_JSON.name, 'json-nested-replace', 'jnested-replace')
-    expect(replacedValue).to.deep.equal(REPLACED_JSON.name)
+    const replacedValue = jnestedReplace(Object.assign({}, INPUT_JSON), 'json-nested-replace', 'jnested-replace');
+    expect(replacedValue).to.deep.equal(REPLACED_JSON);
   });
   it('should replace all the occurences in object and array', () => {
-    const replacedValue = jnestedReplace(ARRAY_JSON, 'json-nested', 'jnested')
-    expect(replacedValue).to.deep.equal(REPLACE_ARRYA_JSON)
+    const replacedValue = jnestedReplace(Object.assign({}, ARRAY_JSON), 'json-nested', 'jnested');
+    expect(replacedValue).to.deep.equal(REPLACE_ARRYA_JSON);
   });
   it('should throw error of empty input values', () => {
     try {
-      jnestedReplace()
+      jnestedReplace();
     } catch (err) {
-      expect(err).to.equal('JSON, searchValue, newValue cannot be null');
+      expect(err.message).to.equal('JSON, searchValue, newValue cannot be null');
     }
+  });
+  it('should throw error if input is not json', () => {
+    try {
+      jnestedReplace(INPUT_JSON.name, 'json-nested-replace', 'jnested-replace');
+    } catch (err) {
+      expect(err.message).to.equal('Invalid JSON');
+    }
+  });
+  it('should skip keys while replacing', () => {
+    const INPUT_JSON = {
+      'name': 'json-nested-replace',
+      'author': 'Arshad Kazmi',
+      'repository': {
+        'url': 'https://github.com/arshadkazmi42/json-nested-replace',
+        'language': 'js'
+      }
+    };
+    const replacedValue = jnestedReplace(Object.assign({}, INPUT_JSON), 'json-nested-replace', 'jnested-replace', ['url']);
+    expect(replacedValue.repository.url).to.equal(INPUT_JSON.repository.url);
+    expect(replacedValue.name).to.be.equal('jnested-replace');
   });
 });
