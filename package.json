@@ -1,6 +1,6 @@
 {
   "name": "json-nested-replace",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Searches and replace values at every level of nested json ",
   "main": "index.js",
   "scripts": {
