@@ -35,26 +35,29 @@ const INPUT_JSON = {
   }
 };
 
-const replacedJSONValue = jnestedReplace(INPUT_JSON, 'json-nested-replace', 'jnested-replace');
+const replacedJSONValue = jnestedReplace(INPUT_JSON, 'json-nested-replace', 'jnested-replace', ['url']);
 console.log(replacedJSONValue);
 // Output
 /** {
  *   'name': 'jnested-replace',
  *   'author': 'Arshad Kazmi',
  *   'repository': {
- *     'url': 'https://github.com/arshadkazmi42/jnested-replace',
+ *     'url': 'https://github.com/arshadkazmi42/json-nested-replace',
  *     'language': 'js'
  *   }
  * }
  **/
 
-
-const replacedStringValue = jnestedReplace('json-nested-replace', 'json-nested', 'jnested');
-console.log(replacedStringValue)
-// Output
-// jnested-replace
-
 ```
+
+## Function Parameters
+
+Function `jnestedReplace` takes following parameters respectively
+
+- `input`: Object/Array on which nested replace to apply
+- `searchValue`: Value which needs to be replaced in the JSON
+- `newValue`: New Value which needs to be added in place of searchValue
+- `skipKeys`: Optinal field, if any key needs to be skipped from this replacing
 
 ## Contributing
 
