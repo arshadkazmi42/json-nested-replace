@@ -1,8 +1,10 @@
 # json-nested-replace
 
+[![Build](https://github.com/arshadkazmi42/json-nested-replace/actions/workflows/nodejs.yml/badge.svg)](https://github.com/arshadkazmi42/json-nested-replace/actions/workflows/nodejs.yml)
 [![NPM Version](https://img.shields.io/npm/v/json-nested-replace.svg)](https://www.npmjs.com/package/json-nested-replace)
-[![Build Status](https://travis-ci.com/arshadkazmi42/json-nested-replace.svg?branch=master)](https://travis-ci.com/arshadkazmi42/json-nested-replace)
+[![NPM Downloads](https://img.shields.io/npm/dt/json-nested-replace.svg)](https://www.npmjs.com/package/json-nested-replace)
 [![Github Repo Size](https://img.shields.io/github/repo-size/arshadkazmi42/json-nested-replace.svg)](https://github.com/arshadkazmi42/json-nested-replace)
+[![LICENSE](https://img.shields.io/npm/l/json-nested-replace.svg)](https://github.com/arshadkazmi42/json-nested-replace/blob/master/LICENSE)
 [![Contributors](https://img.shields.io/github/contributors/arshadkazmi42/json-nested-replace.svg)](https://github.com/arshadkazmi42/json-nested-replace/graphs/contributors)
 [![Commit](https://img.shields.io/github/last-commit/arshadkazmi42/json-nested-replace.svg)](https://github.com/arshadkazmi42/json-nested-replace/commits/master)
 
