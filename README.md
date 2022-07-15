@@ -10,8 +10,6 @@ Searches and replace values at every level of nested json
 
 > Give us a :star: if you like our work :heart:
 
-Please consider donating, if you like my work
-
 ## Install
 
 ```
