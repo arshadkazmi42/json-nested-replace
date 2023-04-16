@@ -31,6 +31,7 @@ const jnestedReplace = (input, searchValue, newValue, skipKeys=[]) => {
     // for every element of array
     if (isArray(input[key])) {
       for (let i=0; i<input[key].length; i++) {
+
         input[key][i] = jnestedReplace(input, searchValue, newValue, skipKeys);
       }
       continue;
@@ -38,7 +39,7 @@ const jnestedReplace = (input, searchValue, newValue, skipKeys=[]) => {
 
     // If the key needs to be skipped.
     // Do not process and continue to next element
-    if (skipKeys.indexOf(key) === -1) {
+    if (skipKeys.indexOf(key) === -1 && isString(input[key])) {
       input[key] = input[key].replace(searchValue, newValue);
     }
   }
@@ -55,6 +56,12 @@ const isObject = (data) => {
 // checks if data is an array
 const isArray = (data) => {
   return data instanceof Array;
+};
+
+// check id the data is string
+const isString = (data) => {  
+  return typeof data === 'string' 
+    && Object.prototype.toString.call(data) === '[object String]';
 };
 
 
