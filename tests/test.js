@@ -101,4 +101,34 @@ describe('replace in nested json', () => {
     expect(replacedValue.repository.url).to.equal(INPUT_JSON.repository.url);
     expect(replacedValue.name).to.be.equal('jnested-replace');
   });
+  it('show skip the values which are not string', () => {
+    const input = {
+      'name': 'json-nested-replace',
+      'author': 'Arshad Kazmi',
+      'number': 1234,
+      'boolean': true,
+      'repository': {
+        'url': 'https://github.com/arshadkazmi42/json-nested-replace',
+        'language': 'js',
+        'numberString': '1234',
+        'booleanString': 'true'
+      }
+    };
+
+    const expected = {
+      'name': 'json-nested-replace',
+      'author': 'Arshad Kazmi',
+      'number': 1234,
+      'boolean': true,
+      'repository': {
+        'url': 'https://github.com/arshadkazmi42/json-nested-replace',
+        'language': 'js',
+        'numberString': '4321',
+        'booleanString': 'true'
+      }
+    };
+
+    const updatedInput = jnestedReplace(input, '1234', '4321');
+    expect(updatedInput).to.be.deep.equals(expected);
+  });
 });
